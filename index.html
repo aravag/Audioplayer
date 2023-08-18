@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audioplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="player-wrapper">
+        <div class="player-container">
+            <div class="cover-container">
+                <img src="" alt="Обложка" class="cover-image" id="cover-image">
+            </div>
+            <div class="song-title" id="song-title"></div>
+            <div class="song-artist" id="song-artist"></div>
+            <div class="progress-container">
+                <div class="progress-wrapper">
+                    <input class="progress" type="range" id="seek-bar" value="0">
+                </div>
+                <div class="time-container">
+                    <span id="current-time">00:00</span>
+                    <span id="duration">00:00</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="prev-btn"></button>
+                <button id="play-btn"></button>
+                <button id="next-btn"></button>
+            </div>
+            <div class="volume-container">
+                <div class="volume-low">
+                    <img src="https://static.tildacdn.com/tild6662-3366-4462-a466-616162366338/low-volume.svg"
+                        alt="icon">
+                </div>
+                <input class="volume" type="range" id="volume-bar" min="0" max="1" step="0.01" value="1">
+                <div class="volume-high">
+                    <img src="https://static.tildacdn.com/tild3730-3665-4933-a138-656265346235/high-volume.svg"
+                        alt="icon">
+                </div>
+            </div>
+        </div>
+        <ul class="playlist">
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/y8bwj286lbnuk17wt9y1q/1..mp3?rlkey=b40ak34hnzxtyanr20ra4lepe&amp;dl=0"
+                data-name="Владимир Еремин">
+                <img src="https://static.tildacdn.com/tild3538-6638-4130-a465-643735333237/photo_2023-08-11_170.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Начало</div>
+                    <div class="playlist-artist">Владимир Еремин</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/2235ruojgrsmardf95i0a/2.-O.mp3?rlkey=omgyyegqstze8kb79jk57a8pp&amp;dl=0"
+                data-name="Александра Урсуляк">
+                <img src="https://static.tildacdn.com/tild3635-6563-4961-a538-656166333730/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Об одном поэте</div>
+                    <div class="playlist-artist">Александра Урсуляк</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/rik4rn6sa08c293qeek5a/3..mp3?rlkey=jja2gwgcmzoipeqm00hti34d2&amp;dl=0"
+                data-name="Юлия Пересильд">
+                <img src="https://static.tildacdn.com/tild3733-3737-4331-a263-623331363338/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Свидание</div>
+                    <div class="playlist-artist">Юлия Пересильд</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/c9el8g8h5uiskq7erwl07/4..mp3?rlkey=u2ggyioolavbajfw97g1bv0ki&amp;dl=0"
+                data-name="Павел Акимкин">
+                <img src="https://static.tildacdn.com/tild3230-3133-4861-b661-333864326331/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Красота</div>
+                    <div class="playlist-artist">Павел Акимкин</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/swnjem26tjin9zefontav/5..mp3?rlkey=1ujpl8yhkohglns1hy3mbbddx&amp;dl=0"
+                data-name="Денис Суханов">
+                <img src="https://static.tildacdn.com/tild6162-3632-4263-b632-373436326536/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Грустная история</div>
+                    <div class="playlist-artist">Денис Суханов</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/lw2atnm5hihweozrl7ynf/6..mp3?rlkey=mkqa10agsg2hp18n2num857py&amp;dl=0"
+                data-name="Олег Савцов">
+                <img src="https://static.tildacdn.com/tild3839-3266-4861-b161-336535646662/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Исключительный факт</div>
+                    <div class="playlist-artist">Олег Савцов</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/oxyxcns8zvvimotjkhnte/7..mp3?rlkey=xpg5cuez63elfmxu89aiht4tb&amp;dl=0"
+                data-name="Александра Ревенко">
+                <img src="https://static.tildacdn.com/tild3838-3339-4032-a138-303131316630/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Старуха Изергиль</div>
+                    <div class="playlist-artist">Александра Ревенко</div>
+                </div>
+            </li>
+            <li data-src="https://dl.dropboxusercontent.com/scl/fi/3m48id0yc1laeycsvo8mr/8.-rozdenie-cheloveka.mp3?rlkey=v43ssw1bobfkwlz7ja70jjfvf&amp;dl=0"
+                data-name="Евгений Миронов">
+                <img src="https://static.tildacdn.com/tild6561-3065-4933-a130-613232633737/photo_2023-08-11_164.jpeg"
+                    alt="cover">
+                <div class="playlist-text">
+                    <div class="playlist-title">Рождение человека</div>
+                    <div class="playlist-artist">Евгений Миронов</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
